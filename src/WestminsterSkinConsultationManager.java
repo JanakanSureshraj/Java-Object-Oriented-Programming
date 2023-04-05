@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.util.*;
 import java.io.*;
 import java.awt.*;
-;
 
 public class WestminsterSkinConsultationManager implements SkinConsultationManager{
 
