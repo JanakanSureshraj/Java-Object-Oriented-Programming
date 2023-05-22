@@ -183,12 +183,42 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
 
     public static void main(String[]args) throws IOException {
         WestminsterSkinConsultationManager manager1= new WestminsterSkinConsultationManager();
+        
+        System.out.println("--Skin Consultation Centre--");
+        String option= "";
+        while(!(option.equals("EXT"))){
+            System.out.println("\nEnter option: \nAdd- Add a Doctor to the system. ");
+            System.out.println("Del- Delete a doctor from the system. ");
+            System.out.println("Print- Print the list of doctors in the system. ");
+            System.out.println("Save- Save in a file or read from a file. ");
+            System.out.println("GUI- Open the Graphical User Interface for visualization. ");
+            System.out.println("Decrypt- Decrypt the added notes. ");
+            Scanner obj= new Scanner(System.in);
+            option= obj.next();
 
-        /***manager1.addDoctor();
-        manager1.deleteDoctor();
-        manager1.printListOfDoctors();***/
-        manager1.saveInAFile();
-        manager1.openGui();
-        manager1.decryptImage();
+            switch (option){
+                case "Add":
+                    manager1.addDoctor();
+                    break;
+                case "Del":
+                    manager1.deleteDoctor();
+                    break;
+                case "Print":
+                    manager1.printListOfDoctors();
+                    break;
+                case "Save":
+                    manager1.saveInAFile();
+                    break;
+                case "GUI":
+                    manager1.openGui();
+                    break;
+                case "Decrypt":
+                    manager1.decryptImage();
+                    break;
+                case "EXT":
+                    System.out.println("Program Terminated...");
+                    return;
+            }
+        }
     }
 }
